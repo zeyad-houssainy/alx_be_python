@@ -15,9 +15,9 @@ def perform_operation(num1, num2, operation):
         num2 = float(num2)
         if operation == "add":
             return num1 + num2
-        if operation == "subtract":
+        elif operation == "subtract":
             return num1 - num2
-        if operation == "multiply":
+        elif operation == "multiply":
             return num1 * num2
-        if operation == "divide":
+        elif operation == "divide":
             return num1 / num2 if num2 != 0 else None
