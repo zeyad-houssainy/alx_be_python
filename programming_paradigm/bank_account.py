@@ -1,22 +1,54 @@
-class BankAccount:
-    def __init__(self, account_balance=0):
-        if not(account_balance, (int, float)) or account_balance < 0:
-            raise ValueError("Initial balance should be a positive number")
-        self.account_balance = account_balance
+# bank_account.py
 
-# e33ml ininstance w eno yb2a positive a kbr mn zero, b3den shof el withdraw wel deposit 
+class BankAccount:
+    """
+    A simple BankAccount class to encapsulate banking operations.
+    """
+
+    def __init__(self, initial_balance=0):
+        """
+        Initializes a new BankAccount instance with an optional initial balance.
+
+        Args:
+            initial_balance (float): The starting balance for the account. Defaults to 0.
+        """
+        # Ensure initial_balance is a non-negative number
+        if not isinstance(initial_balance, (int, float)) or initial_balance < 0:
+            raise ValueError("Initial balance must be a non-negative number.")
+        self.account_balance = initial_balance
+
     def deposit(self, amount):
-        self.account_balance = self.account_balance + amount
-        print(f"Deposited: ${amount}")
+        """
+        Deposits a specified amount into the account.
+
+        Args:
+            amount (float): The amount to deposit. Must be a positive number.
+        """
+        if not isinstance(amount, (int, float)) or amount <= 0:
+            raise ValueError("Deposit amount must be a positive number.")
+        self.account_balance += amount
+        # No print statements here, as main-0.py handles the output based on its requirements
 
     def withdraw(self, amount):
-        if amount >= self.account_balance:
-            self.account_balance = self.account_balance - amount
-            print(f"Withdrew: ${amount}")
+        """
+        Withdraws a specified amount from the account if sufficient funds are available.
+
+        Args:
+            amount (float): The amount to withdraw. Must be a positive number.
+
+        Returns:
+            bool: True if the withdrawal was successful, False otherwise.
+        """
+        if not isinstance(amount, (int, float)) or amount <= 0:
+            raise ValueError("Withdrawal amount must be a positive number.")
+        if self.account_balance >= amount:
+            self.account_balance -= amount
             return True
         else:
-            print("Insufficient funds.")
             return False
 
     def display_balance(self):
-        print(f"Current Balance:: ${self.account_balance}")
+        """
+        Prints the current account balance in a user-friendly format.
+        """
+        print(f"Current Balance: ${self.account_balance:.2f}")
