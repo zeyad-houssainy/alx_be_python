@@ -57,33 +57,3 @@ class Library:
             if book.is_available():
                 print(book)
 
-def main():
-    # Setup a small library
-    library = Library()
-    library.add_book(Book("Brave New World", "Aldous Huxley"))
-    library.add_book(Book("1984", "George Orwell"))
-
-    # Initial list of available books
-    print("")
-    print("Available books after setup:") #Available books after setup:
-    library.list_available_books()  # Brave New World by Aldous Huxley
-                                    #1984 by George Orwell
-
-    # Simulate checking out a book
-    print("")
-    library.check_out_book("1984")
-    print("\nAvailable books after checking out '1984':") #Available books after checking out '1984':
-    library.list_available_books()  # Brave New World by Aldous Huxley
-
-
-    # Simulate returning a book
-    library.return_book("1984")
-    print("\nAvailable books after returning '1984':")
-    library.list_available_books()  # Brave New World by Aldous Huxley
-                                    # 1984 by George Orwell
-
-
-if __name__ == "__main__":
-    main()
-
-
