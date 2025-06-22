@@ -22,7 +22,7 @@ class EBook(Book):
             raise TypeError("file_size must be an integer")
 
     def __str__(self):
-        return f"{super().__str__()}, File Size: {self.file_size}KB"
+        return f"EBook: {super().__str__()}, File Size: {self.file_size}KB"
 
 
 class PrintBook(Book):
@@ -34,7 +34,7 @@ class PrintBook(Book):
             raise TypeError("page_count must be an integer.")
     
     def __str__(self):
-        return f"{super().__str__()}, Page Count: {self.page_count} pages"
+        return f"PrintBook: {super().__str__()}, Page Count: {self.page_count} pages"
 
 
 class Library:
