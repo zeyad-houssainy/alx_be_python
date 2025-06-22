@@ -27,23 +27,39 @@
 # EBook: Snow Crash by Neal Stephenson, File Size: 500KB
 # PrintBook: The Catcher in the Rye by J.D. Salinger, Page Count: 234
 
-from polymorphism_demo import Shape, Rectangle, Circle
-import math
+# from class_static_methods_demo import Calculator
+# from polymorphism_demo import Shape, Rectangle, Circle
+# import math
 
 
-def main():
-    shapes = [
-        Rectangle(10, 5),
-        Circle(7)
-    ]
+# def main():
+#     shapes = [
+#         Rectangle(10, 5),
+#         Circle(7)
+#     ]
 
-    for shape in shapes:
-        print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
+#     for shape in shapes:
+#         print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 
 # The area of the Rectangle is : 50
 # The area of the Circle is : 153.93804002589985
+
+from class_static_methods_demo import Calculator
+
+def main():
+    # Using the static method
+    sum_result = Calculator.add(10, 5)
+    print(f"The sum is: {sum_result}")
+
+    # Using the class method
+    product_result = Calculator.multiply(10, 5)
+    print(f"The product is: {product_result}")
+
+
+if __name__ == "__main__":
+    main()
