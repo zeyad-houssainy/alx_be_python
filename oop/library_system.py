@@ -34,7 +34,7 @@ class PrintBook(Book):
             raise TypeError("page_count must be an integer.")
     
     def __str__(self):
-        return f"PrintBook: {super().__str__()}, Page Count: {self.page_count} pages"
+        return f"PrintBook: {super().__str__()}, Page Count: {self.page_count}"
 
 
 class Library:
